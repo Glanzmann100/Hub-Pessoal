@@ -139,11 +139,52 @@ body {
     gap: 20px;
     flex-wrap: wrap;
 }
-.news-container {
+.news-container1 {
+    background-image: url(../img/Morcego.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex: 1 1 calc(33.333% - 20px);
     min-width: 220px;
     height: 200px;
-    background: #2b2b2b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-container2 {
+    background-image: url(../img/betano.png);
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 220px;
+    height: 200px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-container3 {
+    background-image: url(../img/aws.jpeg);
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 220px;
+    height: 200px;
     color: #fff;
     display: flex;
     flex-direction: column;
