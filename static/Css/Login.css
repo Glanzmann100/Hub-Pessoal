@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     height: 100vh;
     background-image: url(../img/fibra.jpg);
@@ -15,69 +15,71 @@ body {
     left: 210px;
     height: 500px;
     width: 860px;
-    background-color: black;
+    background-color: #1a1a1a;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .Login {
     width: 50%;
-    background-color: #000;
+    background-color: #1a1a1a;
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.Login h2 {
-    display: flex;
-    position: relative;
-    right: 130px;
-    font-size: 2rem;
-    margin-bottom: 50px;
-}
-.Login form {
-    display: flex;
-    position: relative;
-    right: 10px;
-    flex-direction: column;
-    width: 80%;
-    max-width: 300px;
-    margin-bottom: 110px;
-}
-.Id, .Senha {
-    padding: 15px;
-    width: 280px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    background-color: black;
-    border-top: gray;
-    color: white;
-    margin-top: 5px;
-}
-.Botao {
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    width: 275px;
+}
+.Login h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+.Login form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+.Id, .Senha {
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+.Botao {
+    padding: 15px;
+    width: 100%;
     border: none;
     border-radius: 6px;
-    background-color: gray;
+    background-color: rgb(58, 58, 58);
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 30px;
+    transition: background-color 0.3s;
     text-decoration: none;
+    text-align: center;
+}
+.Botao:hover {
+    background-color: #357abd;
 }
 .Imagem {
-    display: flex;
-    position: relative;
-    left: 1px;
     width: 50%;
-    height: 520px;
+    height: 500px;
     background-image: url(../img/Imagem.jpg);
     background-size: cover;
     background-position: center;
-    bottom: 10px;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
+}
+.Bem-Vindo {
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
 }

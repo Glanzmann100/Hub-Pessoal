@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="../static/Css/Home.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-    <div class=""></div>
-</body>
-</html>
+    <div class="container-cabeçalho">
+        <div class="user-info">Sr.Schmitz</div>
+        <ul>
+            <li><input type="text" placeholder="🔍"></li>
+            <hr class="separator">
+            <li><a href="Lista-Tarefas.html" class="Atividades" data-emoji="📝">Bloco de Notas</a></li>
+            <li><a href="Agenda.html" class="Atividades" data-emoji="📐">Projetos</a></li>
+            <li><a href="Calendario.html" class="Atividades" data-emoji="📅">Calendário</a></li>
+            <li><a href="Chatbot-Horus.html" class="Atividades" data-emoji="🤖">Hórus</a></li>
+            <li><a href="Arquivos.html" class="Atividades" data-emoji="📁">Arquivos</a></li>
+            <li><a href="Monitoramento.html" class="Atividades" data-emoji="👁️">Monitoramento</a></li>
+            <li><a href="Configurações.html" class="Atividades" data-emoji="⚙️">Configurações</a></li>
+        </ul>
+    </div>
+<div class="main-content">
+    <div class="news-slider">
+        <div class="slider-wrapper">
+            <div class="slide">
+                <img src="../static/img/Batman.png" alt="Notícia 1" style="width:100%; height: auto;">
+                <h2>LEGO Batman: Bat Trivia</h2>
+                <p>Em que empresa Selina Kyle trabalha em Batman Returns?</p>
+            </div>
+            <div class="slide">
+                <img src="file-QXDFYYqSoNfYtp7S6HXdTF" alt="Notícia 2" style="width:100%; height: auto;">
+                <h2>Notícia de Jogo 2</h2>
+                <p>Nova expansão de RPG lançada!</p>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/800x400?text=Game+News+3" alt="Notícia 3" style="width:100%; height: auto;">
+                <h2>Notícia de Jogo 3</h2>
+                <p>Lançamento de console agendado para este mês.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-containers">
+        <div class="news-container">Notícia Secundária 1</div>
+        <div class="news-container">Notícia Secundária 2</div>
+        <div class="news-container">Notícia Secundária 3</div>
+    </div>
+</div>
+
+<script>
+    const wrapper = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        wrapper.style.transform = `translateX(-${index * 100}%)`;
+        wrapper.style.transition = 'transform 0.5s ease-in-out';
+    }
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }, 3000);
+</script>
