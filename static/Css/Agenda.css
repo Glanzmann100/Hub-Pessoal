@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #333333;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+.container-cabeçalho {
+    background: linear-gradient(180deg, #1f1f1f, #141414);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 10px;
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #2b2b2b;
+}
+.container-cabeçalho ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+.container-cabeçalho input {
+    display: flex;
+    position: relative;
+    right: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2b2b2b;
+    color: rgb(255, 255, 255);
+    padding: 12px 15px;
+    margin: 10px;
+    width: 90%;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.container-cabeçalho input::placeholder {
+    color: #888;
+}
+.container-cabeçalho a {
+    color: #b0b0b0;
+    margin: 8px ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px ;
+    width: 90%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.container-cabeçalho a:hover {
+    background: #333;
+    color: #fff;
+}
+.container-cabeçalho a.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
+}
+.botao-spotify {
+    background-color: black;
+    background-image: url(../img/spotify.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    position: relative;
+    top: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 47, 47); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.botao-spotify:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.botao-github {
+    background-color: black;
+    display: flex;
+    position: relative;
+    left: 55px;
+    bottom: 28px;
+    background-image: url(../img/git.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 47, 47); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao-github:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.botao-vscode {
+    background-color: black;
+    display: flex;
+    position: relative;
+    left: 110px;
+    bottom: 58px;
+    background-image: url(../img/vscode.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 47, 47); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao-vscode:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.botao-linkedin {
+    background-color: black;
+    display: flex;
+    position: relative;
+    left: 165px;
+    bottom: 88px;
+    background-image: url(../img/linkedin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 47, 47); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao-linkedin:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.botao-discord {
+    background-color: black;
+    display: flex;
+    position: relative;
+    left: 220px;
+    bottom: 117px;
+    background-image: url(../img/DISCORD.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 47, 47); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.botao-discord:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.separator {
+    border: none;
+    height: 2px;
+    background: rgb(48, 47, 47);
+    margin: 0px 0;
+}
+.divisoria {
+    border: none;
+    height: 3px;
+    background: rgb(48, 47, 47);
+    margin: 15px 0;
+}

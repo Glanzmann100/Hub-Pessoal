@@ -2,7 +2,7 @@ body {
     margin: 0;
     display: flex;
     height: 100vh;
-    background-color: #181818;
+    background-color: #333333;
     font-family: 'Poppins', sans-serif;
     color: #fff;
 }
@@ -44,28 +44,22 @@ body {
 }
 .container-cabeçalho a {
     color: #b0b0b0;
-    margin: 8px 0;
+    margin: 8px ;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px ;
     width: 90%;
     border-radius: 8px;
     transition: all 0.3s ease;
     font-weight: 500;
-}
-.container-cabeçalho a::before {
-    content: attr(data-emoji);
-    color: rgb(48, 47, 47);
-    margin-right: 12px;
-    font-size: 1.2em;
 }
 .container-cabeçalho a:hover {
     background: #333;
     color: #fff;
 }
 .container-cabeçalho a.active {
-    background: #007bff;
+    background: #333;
     color: #fff;
     font-weight: 600;
 }
@@ -89,42 +83,17 @@ body {
 }
 .slide {
     min-width: 100%;
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 15px;
+    left: 20px;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     position: relative;
     border-radius: 12px;
-}
-.slide a {
-    position: relative;
-    z-index: 2;
-}
-.slide h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.slide p {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #ddd;
-}
-.slide a {
-    display: inline-block;
-    padding: 8px 14px;
-    background: #007bff;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.3s;
-    font-size: 14px;
-}
-.slide a:hover {
-    background: #0056b3;
 }
 .news-containers {
     display: flex;
@@ -140,9 +109,9 @@ body {
 .news-container4,
 .news-container5,
 .news-container6 {
+    background-color: #252020;
     flex: 1 1 0;
-    height: 200px;
-    min-width: 0;
+    height: 190px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -164,19 +133,13 @@ body {
 .news-container5:hover,
 .news-container6:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 20px rgba(196, 183, 183, 0.5);
 }
 .divisoria {
     border: none;
     height: 3px;
     background: rgb(48, 47, 47);
     margin: 15px 0;
-}
-.separator {
-    border: none;
-    height: 2px;
-    background: rgb(48, 47, 47);
-    margin: 10px 0;
 }
 .botao-spotify {
     background-color: black;
