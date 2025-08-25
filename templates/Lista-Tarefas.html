@@ -36,5 +36,26 @@
             <button class="botao-discord" onclick="window.location.href='discord:'"></button>
         </div>
     </div>
-    <input type="text" placeholder="Digite sua tarefa..." class="quadro">
+    <input type="text" placeholder="Digite sua tarefa..." class="quadro" id="noteInput">
+    <button id="botao-salvar"></button>
+    <div id="notas"></div>
+
+    <script>
+        const notas = document.getElementById("notas");
+        document.getElementById("botao-salvar").addEventListener("click", () => {
+            const text = document.getElementById("noteInput").value.trim();
+            if (!text) return;
+            const noteCard = document.createElement("div");
+            noteCard.className = "card";
+            noteCard.textContent = text;
+            const deleteBtn = Object.assign(document.createElement("button"), {
+                textContent: "Excluir",
+                onclick: () => noteCard.remove()
+            });
+            noteCard.appendChild(deleteBtn);
+            notas.appendChild(noteCard);
+            document.getElementById("noteInput").value = "";
+        });
+    </script>
+
     <body>
