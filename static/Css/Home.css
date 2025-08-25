@@ -126,6 +126,24 @@ body {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+.news-container1 {
+    background-image: url(../img/batman.jpg);
+}
+.news-container2 {
+    background-image: url(../img/flamengo.jpeg);
+}
+.news-container3 {
+    background-image: url(../img/superman.jpg);
+}
+.news-container4 {
+    background-image: url(../img/aws.jpg);
+}
+.news-container5 {
+    background-image: url(../img/embraert.jpg);
+}
+.news-container6 {
+    background-image: url(../img/spurs.jpg);
+}
 .news-container1:hover,
 .news-container2:hover,
 .news-container3:hover,

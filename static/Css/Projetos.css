@@ -40,6 +40,9 @@ body {
     font-size: 14px;
     transition: all 0.3s ease;
 }
+.container-cabeçalho input::placeholder {
+    color: #888;
+}
 .container-cabeçalho a {
     color: #b0b0b0;
     margin: 8px ;
@@ -55,6 +58,11 @@ body {
 .container-cabeçalho a:hover {
     background: #333;
     color: #fff;
+}
+.container-cabeçalho a.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
 }
 .botao-spotify {
     background-color: black;
@@ -163,15 +171,27 @@ body {
     transform: scale(1.2);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
+.separator {
+    border: none;
+    height: 2px;
+    background: rgb(48, 47, 47);
+    margin: 0px 0;
+}
+.divisoria {
+    border: none;
+    height: 3px;
+    background: rgb(48, 47, 47);
+    margin: 15px 0;
+}
 .quadro {
     background-color: #252020;
     color: white;
     display: flex;
     position: relative;
-    left: 430px;
-    padding: 100px;
-    width: 600px;
-    height: 200px;
+    left: 410px;
+    padding: 90px;
+    width: 100px;
+    height: 60px;
     top: 40px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -191,16 +211,16 @@ body {
     background: rgb(48, 47, 47);
     margin: 15px 0;
 }
-#botao-salvar {
+#salvar-projeto {
     background-image: url(../img/Salvar.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgb(90, 84, 84);
-    top: 400px;
-    left: 385px;
-    height: 30px;
-    width: 30px;
+    top: 200px;
+    left: 330px;
+    height: 60px;
+    width: 60px;
     display: flex;
     position: relative;
     padding: 5px;
@@ -210,9 +230,9 @@ body {
     border: solid 1px rgb(48, 47, 47);
     cursor: pointer;
 }
-#botao-salvar:hover {
-    transform: scale(1);
-    box-shadow: 0 4px 20px rgba(196, 183, 183, 0.5);
+#salvar-projeto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(196, 183, 183, 0.5);
 }
 #notas {
     position: relative;
@@ -221,13 +241,9 @@ body {
     width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 .card {
-    display: flex;
-    position: absolute;
-    right: 680px;
-    top: 400px;
+    display: absolute;
     background: #1f1f1f;
     color: white;
     padding: 12px 15px;
@@ -235,9 +251,7 @@ body {
     font-size: 14px;
     border: 1px solid #2b2b2b;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow-wrap: break-word;
-    font-family: 'Poppins', sans-serif;
-    white-space: normal; 
+    margin-bottom: 10px;
 }
 .card:hover {
     transform: scale(1.01);
@@ -247,14 +261,13 @@ body {
     display: flex;
     position: relative;
     background-color: rgba(196, 183, 183, 0.5);
-    height: 28px;
     border: none;
+    height: 28px;
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
     cursor: pointer;
 }
-
 .card button:hover {
     background-color: rgba(196, 183, 183, 0.5);
 }
