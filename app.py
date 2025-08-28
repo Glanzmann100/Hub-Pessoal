@@ -1,8 +1,9 @@
 from flask import Flask
 from database import db
-from routes.Login import usuarios_bp
+from routes.Registro import usuarios_bp
 from routes.Projetos import projetos_bp
 from routes.Calendario import eventos_bp
+from routes.Tarefas import tarefas_bp
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Data.db"
@@ -16,6 +17,7 @@ with app.app_context():
 app.register_blueprint(usuarios_bp)
 app.register_blueprint(projetos_bp)
 app.register_blueprint(eventos_bp)
+app.register_blueprint(tarefas_bp)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

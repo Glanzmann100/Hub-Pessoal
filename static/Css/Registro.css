@@ -38,15 +38,15 @@ body {
 
 .Login form {
     display: flex;
-    width: 40px;
+    flex-direction: column;
+    width: 100%;
     max-width: 300px;
     margin-bottom: 20px;
 }
 
-.Id,
-.Senha {
+.Id, .Senha, .Email {
     padding: 15px;
-    width: 80%;
+    width: 100%;
     margin-bottom: 20px;
     border-radius: 6px;
     background-color: #2a2a2a;
@@ -55,50 +55,9 @@ body {
     font-size: 1rem;
 }
 
-.Botao {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    right: 100px;
-    padding: 15px;
-    width: 30%;
-    border: none;
-    border-radius: 6px;
-    background-color: rgb(58, 58, 58);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    text-align: center;
-}
-
-.Botao {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    right: 100px;
-    padding: 15px;
-    width: 30%;
-    border: none;
-    border-radius: 6px;
-    background-color: rgb(58, 58, 58);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    text-align: center;
-}
-
 .Botao-Cadastro {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    left: 100px;
-    bottom: 47px;
     padding: 15px;
-    width: 30%;
+    width: 100%;
     border: none;
     border-radius: 6px;
     background-color: rgb(58, 58, 58);
@@ -110,7 +69,7 @@ body {
     text-align: center;
 }
 
-.Botao:hover {
+.Botao-Cadastro:hover {
     background-color: #4a4a4a;
 }
 
@@ -124,6 +83,7 @@ body {
 }
 
 .Bem-Vindo {
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #e0e0e0;

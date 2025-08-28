@@ -185,6 +185,14 @@ body {
     transform: scale(1.01);
     box-shadow: 0 6px 20px rgba(196, 183, 183, 0.5);
 }
+.nome {
+    position: absolute;
+    background-color: #252020;
+    color: white;
+    border-right: #252020;
+    left: 450px;
+    top: 50px;
+}
 .divisoria {
     border: none;
     height: 3px;
@@ -198,11 +206,11 @@ body {
     background-position: center;
     background-color: rgb(90, 84, 84);
     top: 400px;
-    left: 385px;
+    left: 1180px;
     height: 30px;
     width: 30px;
     display: flex;
-    position: relative;
+    position: absolute;
     padding: 5px;
     border-radius: 40px;
     transition: transform 0.3s, box-shadow 0.3s;

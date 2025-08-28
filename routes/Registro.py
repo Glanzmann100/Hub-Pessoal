@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from models import Usuario
 from database import db
 
@@ -8,26 +8,21 @@ usuarios_bp = Blueprint("usuarios", __name__)
 @usuarios_bp.route("/Lista_Usuarios", methods=["GET"])
 def listar_usuarios():
     usuarios = Usuario.query.all()
-    return jsonify([{"id": u.id, "nome": u.nome, "senha": u.senha} for u in usuarios])
+    return jsonify([{"id": u.id, "nome": u.nome, "senha": u.senha, "email": u.email} for u in usuarios])
 
 # Rota de cadastro de usuário
 @usuarios_bp.route("/Cadastro_Usuarios", methods=["POST"])
 def cadastrar_usuario():
-    data = request.get_json()
-    id = data.get("id")
-    nome = data.get("nome")
-    senha = data.get("senha")
-    novo_usuario = Usuario(id=id, nome=nome, senha=senha)
+    nome = request.form.get("nome")
+    senha = request.form.get("senha")
+    email = request.form.get("email")
+    if not nome or not senha or not email:
+        return jsonify({"erro": "Campos obrigatórios faltando"}), 400
+    novo_usuario = Usuario(nome=nome, senha=senha, email=email)
     db.session.add(novo_usuario)
     db.session.commit()
-    return jsonify({
-        "mensagem": "Usuário cadastrado com sucesso!",
-        "usuario": {
-            "id": novo_usuario.id,
-            "nome": novo_usuario.nome,
-            "senha": novo_usuario.senha,
-        }
-    }), 201
+    usuarios = Usuario.query.all()
+    return render_template("Home.html", usuarios=usuarios)
 
 # Rota de deletar usuário
 @usuarios_bp.route("/Deletar_Usuarios/<int:id>", methods=["DELETE"])

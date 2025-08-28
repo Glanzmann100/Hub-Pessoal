@@ -22,7 +22,7 @@ def Cadastro_Projeto():
     db.session.commit()
     return jsonify({
         "mensagem": "Projeto cadastrado com sucesso!",
-        "projeto": {
+        "Projeto": {
             "id": novo_projeto.id,
             "nome": novo_projeto.nome,
             "descricao": novo_projeto.descricao,
