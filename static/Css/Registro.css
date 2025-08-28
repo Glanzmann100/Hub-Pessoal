@@ -1,11 +1,10 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    display: flex;
     height: 100vh;
     background-color: #4a4a4a;
+    overflow: hidden;
 }
-
 .container {
     display: flex;
     position: relative;
@@ -18,7 +17,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .Login {
     width: 50%;
     background-color: #1a1a1a;
@@ -29,21 +27,20 @@ body {
     align-items: center;
     padding: 20px;
 }
-
 .Login h2 {
     font-size: 2rem;
     margin-bottom: 40px;
     color: #e0e0e0;
 }
-
 .Login form {
     display: flex;
+    position: relative;
     flex-direction: column;
-    width: 100%;
+    right: 30px;
+    width: 70%;
     max-width: 300px;
     margin-bottom: 20px;
 }
-
 .Id, .Senha, .Email {
     padding: 15px;
     width: 100%;
@@ -53,11 +50,13 @@ body {
     border: 1px solid #4a4a4a;
     color: #e0e0e0;
     font-size: 1rem;
-}
-
-.Botao-Cadastro {
+}#Botao-Cadastro {
+    display: flex;
+    position: relative;
+    justify-content: center;
     padding: 15px;
-    width: 100%;
+    right: 10px;
+    width: 70%;
     border: none;
     border-radius: 6px;
     background-color: rgb(58, 58, 58);
@@ -68,20 +67,22 @@ body {
     text-decoration: none;
     text-align: center;
 }
-
 .Botao-Cadastro:hover {
     background-color: #4a4a4a;
 }
-
 .Imagem {
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    top: 12px;
+    left: 450px;
     width: 50%;
-    height: 500px;
+    height: 95%;
     background-image: url(../img/Imagem.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 0 10px 10px 0;
 }
-
 .Bem-Vindo {
     display: flex;
     justify-content: center;

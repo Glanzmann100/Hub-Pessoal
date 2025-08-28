@@ -12,19 +12,34 @@
     <div class="container">
         <div class="Login">
             <h2>Cadastro</h2>
-            <form action="http://127.0.0.1:5000/Cadastro_Usuarios" method="POST">
+            <form id="form-cadastro" action="http://127.0.0.1:5000/Cadastro_Usuarios" method="POST">
                 Usuário<input class="Id" placeholder="👤 Usuário" name="nome" required>
                 Senha<input class="Senha" type="password" placeholder="🔒 Senha" name="senha" required>
                 Email<input class="Email" type="email" placeholder="✉️ Email" name="email" required>
-                <button class="Botao-Cadastro">Cadastrar</button>
             </form>
-        </div>
-        <div class="Imagem">
-            <div class="Bem-Vindo">
-                <h2>Cadastro</h2>
+            <a href="Home.html" id="Botao-Cadastro">Cadastrar</a>
+            <script>
+                document.getElementById("Botao-Cadastro").addEventListener("click", function (e) {
+                    const form = document.getElementById("form-cadastro");
+                    const formData = new FormData(form);
+                    fetch("http://127.0.0.1:5000/Cadastro_Usuarios", {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            form.reset();
+                            window.location.href = "Home.html";
+                        })
+                        .catch(err => console.error(err));
+                });
+            </script>
+            <div class="Imagem">
+                <div class="Bem-Vindo">
+                </div>
             </div>
         </div>
-    </div>
+</body>
 </body>
 
 </html>
