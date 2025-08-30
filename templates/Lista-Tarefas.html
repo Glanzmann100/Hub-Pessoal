@@ -35,14 +35,30 @@
             <button class="botao-discord" onclick="window.location.href='discord:'"></button>
         </div>
     </div>
-    <form action="http://127.0.0.1:5000/Adicionar_Tarefa" method="POST">
-        <input type="text" placeholder="Digite sua tarefa..." class="quadro" name="descricao">
-        <input type="text" placeholder="" class="nome" name="nome">
-        <button id="botao-salvar"></button>
-    </form>
-    <div id="notas"></div>
+    <div class="Container">
+        <form id="form-tarefa" action="http://127.0.0.1:5000/Adicionar_Tarefa" method="POST">
+            <input type="text" placeholder="Digite sua tarefa..." class="quadro" name="descricao">
+            <input type="text" placeholder="Nome" class="nome" name="nome">
+        </form>
+        <a href="Lista-Tarefas.html" id="botao-salvar"></a>
+        <div id="notas"></div>
+    </div>
 
     <script>
+        document.getElementById("botao-salvar").addEventListener("click", function (e) {
+            const form = document.getElementById("form-tarefa");
+            const formData = new FormData(form);
+            fetch("http://127.0.0.1:5000/Adicionar_Tarefa", {
+                method: "POST",
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    form.reset();
+                    window.location.href = "Lista-Tarefas.html";
+                })
+                .catch(err => console.error(err));
+        });
         const notas = document.getElementById("notas");
         document.getElementById("botao-salvar").addEventListener("click", () => {
             const text = document.getElementById("descricao").value.trim();

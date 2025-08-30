@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify,render_template
+from flask import Blueprint, request, jsonify
 from models import Tarefa
 from database import db
 
@@ -16,13 +16,10 @@ def Listagem_Tarefas():
 def Adicionar_Tarefa():
     nome = request.form.get("nome")
     descricao = request.form.get("descricao")
-    if not nome or not descricao:
-        return jsonify({"erro": "Campos obrigatórios faltando"}), 400
     nova_tarefa = Tarefa(nome=nome, descricao=descricao)
     db.session.add(nova_tarefa)
     db.session.commit()
-    tarefas = Tarefa.query.all()
-    return render_template("Lista-Tarefas.html", tarefas=tarefas)
+    return jsonify({"mensagem": "Tarefa cadastrada com sucesso!"})
 
 #Rota de Deletar Tarefa
 @tarefas_bp.route("/Deletar_Tarefa/<int:id>", methods=["DELETE"])

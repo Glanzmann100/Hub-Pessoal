@@ -35,11 +35,32 @@
             <button class="botao-discord" onclick="window.location.href='discord:'"></button>
         </div>
     </div>
-    <input class="quadro" id="noteInput">
-    <button id="salvar-projeto"></button>
-    <div id="notas"></div>
+    <div class="Container">
+        <input class="quadro" id="noteInput">
+        <form id="form-projetos" action="http://127.0.0.1:5000/Cadastro_Projeto" method="POST">
+            <input type="text" placeholder="Nome" class="nome" name="nome">
+            <input type="text" placeholder="Descrição" class="descricao" name="descricao">
+            <input type="text" placeholder="Tecnologias" class="tecnologias" name="tecnologias">
+        </form>
+        <a href="Projetos.html" id="salvar-projeto"></a>
+        <div id="notas"></div>
+    </div>
 
     <script>
+        document.getElementById("salvar-projeto").addEventListener("click", function (e) {
+            const form = document.getElementById("form-projetos");
+            const formData = new FormData(form);
+            fetch("http://127.0.0.1:5000/Cadastro_Projeto", {
+                method: "POST",
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    form.reset();
+                    window.location.href = "Projetos.html";
+                })
+                .catch(err => console.error(err));
+        });
         const notas = document.getElementById("notas");
         document.getElementById("salvar-projeto").addEventListener("click", () => {
             const text = document.getElementById("noteInput").value.trim();

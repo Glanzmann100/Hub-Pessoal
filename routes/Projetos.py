@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, render_template
+from flask import Blueprint, request, jsonify
 from models import Projeto
 from database import db
 
@@ -13,22 +13,13 @@ def Lista_Projeto():
 #Rota de Adição de Projeto
 @projetos_bp.route("/Cadastro_Projeto", methods=["POST"])
 def Cadastro_Projeto():
-    data = request.get_json()
-    nome = data.get("nome")
-    descricao = data.get("descricao")
-    tecnologias = data.get("tecnologias")
+    nome = request.form.get("nome")
+    descricao = request.form.get("descricao")
+    tecnologias = request.form.get("tecnologias")
     novo_projeto = Projeto(nome=nome, descricao=descricao, tecnologias=tecnologias)
     db.session.add(novo_projeto)
     db.session.commit()
-    return jsonify({
-        "mensagem": "Projeto cadastrado com sucesso!",
-        "Projeto": {
-            "id": novo_projeto.id,
-            "nome": novo_projeto.nome,
-            "descricao": novo_projeto.descricao,
-            "tecnologias": novo_projeto.tecnologias
-        }
-    }), 201
+    return jsonify({"mensagem": "Projeto cadastrado com sucesso!"})
 
 #Rota de Deletar Projeto 
 @projetos_bp.route("/Deletar_Projetos/<int:id>", methods=["DELETE"])

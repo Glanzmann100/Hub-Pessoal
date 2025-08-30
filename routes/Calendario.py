@@ -15,21 +15,12 @@ def Lista_Eventos():
 # Rota de Inserção de Eventos 
 @eventos_bp.route("/Cadastro_Eventos", methods=["POST"])
 def Cadastrar_Eventos():
-    data = request.get_json()
-    id = data.get("id")
-    nome = data.get("nome")
-    descricao = data.get("descricao")
+    nome = request.form.get("nome")
+    descricao = request.form.get("descricao")
     novo_evento = Evento(id=id, nome=nome, descricao=descricao)
     db.session.add(novo_evento)
     db.session.commit()
-    return jsonify({
-        "mensagem": "Evento cadastrado com sucesso!",
-        "Evento": {
-            "id": novo_evento.id,
-            "nome": novo_evento.nome,
-            "descricao": novo_evento.descricao,
-        }
-    }), 201
+    return jsonify({"mensagem": "Evento adicionado com sucesso!"})
 
 # Rota de Deletar Eventos
 @eventos_bp.route("/Deletar_Eventos/<int:id>", methods=["DELETE"])
